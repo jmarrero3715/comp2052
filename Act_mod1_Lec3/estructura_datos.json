@@ -1,0 +1,29 @@
+{
+    "usuarios": [
+      {
+        "id": 1,
+        "nombre": "Ana Pérez",
+        "correo": "ana@example.com"
+      },
+      {
+        "id": 2,
+        "nombre": "Luis Gómez",
+        "correo": "luis@example.com"
+      }
+    ],
+    "productos": [
+      {
+        "id": 101,
+        "nombre": "Laptop Lenovo",
+        "precio": 1200.50,
+        "stock": 5
+      },
+      {
+        "id": 102,
+        "nombre": "Mouse Logitech",
+        "precio": 25.99,
+        "stock": 30
+      }
+    ]
+  }
+  
