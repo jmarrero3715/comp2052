@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block titulo %}Notas{% endblock %}
+{% block contenido %}
+    <h2>Todas las notas</h2>
+    <ul>
+        {% for nota in notas %}
+            <li><strong>{{ nota.titulo }}:</strong> {{ nota.contenido }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

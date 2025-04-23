@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titulo %}Notas Flask{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <header>
+        <h1>📝 App Mis Notas</h1>
+        <nav>
+            <a href="/">Inicio</a> |
+            <a href="/notas">Ver Notas</a> |
+            <a href="/nueva_nota">Nueva Nota</a>
+        </nav>
+        <hr>
+    </header>
+    <main>
+        {% block contenido %}{% endblock %}
+    </main>
+
+    <button id="toggleTheme" style="position: fixed; top: 1rem; right: 1rem;">🌙 Cambiar tema</button>
+
+<script>
+    // Detectar tema guardado
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.body.classList.add(savedTheme + "-mode");
+
+    // Cambiar tema al hacer clic
+    document.getElementById("toggleTheme").addEventListener("click", () => {
+        const current = document.body.classList.contains("dark-mode") ? "dark" : "light";
+        const newTheme = current === "dark" ? "light" : "dark";
+        document.body.classList.remove(current + "-mode");
+        document.body.classList.add(newTheme + "-mode");
+        localStorage.setItem("theme", newTheme);
+    });
+</script>
+
+</body>
+</html>
